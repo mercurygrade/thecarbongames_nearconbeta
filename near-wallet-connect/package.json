@@ -1,0 +1,68 @@
+{
+  "name": "thecarbongames",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@headlessui/react": "^1.5.0",
+    "@heroicons/react": "^1.0.6",
+    "@near-wallet-selector/core": "^5.0.0",
+    "@near-wallet-selector/ledger": "^5.0.0",
+    "@near-wallet-selector/math-wallet": "^5.0.0",
+    "@near-wallet-selector/modal-ui": "^5.0.0",
+    "@near-wallet-selector/my-near-wallet": "^5.0.0",
+    "@near-wallet-selector/near-wallet": "^5.0.0",
+    "@near-wallet-selector/nightly": "^5.0.0",
+    "@near-wallet-selector/nightly-connect": "^5.0.0",
+    "@near-wallet-selector/sender": "^5.0.0",
+    "@near-wallet-selector/wallet-connect": "^5.0.0",
+    "@tailwindcss/forms": "^0.5.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "assert": "^2.0.0",
+    "autoprefixer": "^10.4.2",
+    "cogo-toast": "^4.2.3",
+    "near-api-js": "^0.45.1",
+    "postcss": "^8.4.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
+    "react-spinners": "^0.13.4",
+    "tailwindcss": "^3.0.23",
+    "typescript": "^4.8.2",
+    "web-vitals": "^3.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-bootstrap-table-next": "^4.0.17",
+    "@types/react-modal": "^3.13.1"
+  },
+  "browser": {
+    "crypto": false
+  }
+}

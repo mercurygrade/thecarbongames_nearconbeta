@@ -1,0 +1,25 @@
+{
+  "short_name": "TheCarbonGames365",
+  "name": "TheCarbonGames web application ",
+  "icons": [
+    {
+      "src": "TheCarbonGames-favicon.png",
+      "sizes": "64x64 ",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "TheCarbonGames-favicon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "TheCarbonGames-favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#FFF",
+  "background_color": "#ffffff"
+}
