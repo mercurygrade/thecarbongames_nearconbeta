@@ -1,4 +1,6 @@
 
+const { exec } = require('child_process');
+const request = require('request');
 const { connect, KeyPair, utils ,providers} = require("near-api-js");
 import {keyStore,config, creatorAccountId } from "../config";
 export const createWallet = async  (req, res) =>{
@@ -139,6 +141,34 @@ export const getWalletDetails = async  (req, res) =>{
             })
     });
 }
+export const listNFTs = async  (req, res) =>{
+    let user_wallet = req.body.user_wallet; //user's near wallet
+
+    exec(`near view ${process.env.NFT1_OWNER_ID} nft_tokens_for_owner '{"account_id": "${user_wallet}"}'`, (err, stdout, stderr) => {
+        if (err) {
+          console.log(err)
+          return;
+        }
+        if(!stderr){
+          res.json({
+            status:'success',
+            data:stdout.replace(/\n/g,"").replace(`View call: .nft_tokens_for_owner({\"account_id\": \"${user_wallet}\"})`,"")
+            .replace("[","").replace("]","").split('\n'),
+            error:null,
+            })
+            console.log(stdout);
+        }
+        else{
+          res.send({
+            status:'failed',
+            data:null,
+            error:stderr,
+            })
+        }
+        });
+}
+
+ 
 async function NearAccountFunc(creatorAccountId, userAccountId, amount,actionType) 
 {
     const near = await connect({ ...config, keyStore });

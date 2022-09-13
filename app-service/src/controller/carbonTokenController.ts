@@ -2,7 +2,7 @@ import { SendFungibleToken, SendNearToken } from "../../src/utils/send_tokens";
 import {creatorAccountId} from "../config";
 const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
 const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
-const serviceAccount = ""
+const serviceAccount = '';
 initializeApp({
   credential: cert(serviceAccount)
 });
@@ -25,6 +25,7 @@ export const convertCreditToCarbonToken = async (req, res) =>{
             let collectionRef =  await  db.collection('near_wallet');
             let query = await collectionRef.where('userId','==',userid).get()
             .then(snapshot => {
+
               snapshot.forEach(doc => {
                   const sender = creatorAccountId;
                   const receiver = doc.data().accountId;
@@ -33,6 +34,7 @@ export const convertCreditToCarbonToken = async (req, res) =>{
                       res.send({data:response})
                   });
               });
+              
             })
             .catch(err => {
                 console.log('Error getting documents', err);
@@ -42,5 +44,6 @@ export const convertCreditToCarbonToken = async (req, res) =>{
                   error:`User doesnt have a Near Wallet`,
                   })
             });
+
         }
  }

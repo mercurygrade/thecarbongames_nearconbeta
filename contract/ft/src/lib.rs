@@ -44,8 +44,8 @@ impl Contract {
             total_supply,
             FungibleTokenMetadata {
                 spec: FT_METADATA_SPEC.to_string(),
-                name: "Carbon".to_string(),
-                symbol: "CO2".to_string(),
+                name: "".to_string(),
+                symbol: "".to_string(),
                 icon: Some(DATA_IMAGE_SVG_NEAR_ICON.to_string()),
                 reference: None,
                 reference_hash: None,

@@ -9,12 +9,7 @@ const request = require('request');
 //this is required if using a local .env file for private key
 require('dotenv').config();
 export const SendFungibleToken = async (sender:string, receiver:string,networkId:string, carbonTokenAmount:number, callback:any ) =>{
-   
-    console.log('--------------------------------------------------------------------------------------------');
-    console.log('Making Carbon token transaction');
-    console.log(`Sender:: ${sender}  Reciever:: ${receiver} `);
-    console.log('--------------------------------------------------------------------------------------------');
-   
+  
     const near = await connect({ ...config, keyStore });
     const creatorAccount = await near.account(sender);
     const keyPair = KeyPair.fromRandom("ed25519");
@@ -61,7 +56,7 @@ export const SendNearToken = async (sender:string, receiver:string,networkId:str
         // here we are using near-api-js utils to convert yoctoNEAR back into a floating point
         console.log(`Sending ${amount}C02 from ${sender} to ${receiver}...`);
         // send those tokens! :)
-        const result = await senderAccount.sendMoney(receiver, amount,"");
+        const result = await senderAccount.sendMoney(receiver, amount,"thecarbongames.testnet");
         // console results
         console.log('Transaction Results: ', result.transaction);
         console.log('--------------------------------------------------------------------------------------------');
