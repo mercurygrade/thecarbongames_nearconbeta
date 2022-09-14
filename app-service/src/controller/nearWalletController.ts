@@ -150,7 +150,7 @@ export const listNFTs = async  (req, res) =>{
         }
         if(!stderr){
           let cleanResponse = stdout.replace(/\n/g,"")
-          .replace(`View call: tcg7.testnet.nft_tokens_for_owner({\"account_id\": \"${user_wallet}\"})`,"")
+          .replace(`View call:  .nft_tokens_for_owner({\"account_id\": \"${user_wallet}\"})`,"")
           .replace("[","")
           .replace("]","")
           .split("\n")
