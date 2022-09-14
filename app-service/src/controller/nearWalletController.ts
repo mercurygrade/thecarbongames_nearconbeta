@@ -143,20 +143,23 @@ export const getWalletDetails = async  (req, res) =>{
 }
 export const listNFTs = async  (req, res) =>{
     let user_wallet = req.body.user_wallet; //user's near wallet
-
     exec(`near view ${process.env.NFT1_OWNER_ID} nft_tokens_for_owner '{"account_id": "${user_wallet}"}'`, (err, stdout, stderr) => {
         if (err) {
           console.log(err)
           return;
         }
         if(!stderr){
+          let cleanResponse = stdout.replace(/\n/g,"")
+          .replace(`View call: tcg7.testnet.nft_tokens_for_owner({\"account_id\": \"${user_wallet}\"})`,"")
+          .replace("[","")
+          .replace("]","")
+          .split("\n")
+          .toString()
           res.json({
             status:'success',
-            data:stdout.replace(/\n/g,"").replace(`View call: .nft_tokens_for_owner({\"account_id\": \"${user_wallet}\"})`,"")
-            .replace("[","").replace("]","").split('\n'),
+            data: cleanResponse,
             error:null,
             })
-            console.log(stdout);
         }
         else{
           res.send({
@@ -167,8 +170,6 @@ export const listNFTs = async  (req, res) =>{
         }
         });
 }
-
- 
 async function NearAccountFunc(creatorAccountId, userAccountId, amount,actionType) 
 {
     const near = await connect({ ...config, keyStore });

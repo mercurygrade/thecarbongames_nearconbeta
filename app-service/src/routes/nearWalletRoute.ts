@@ -7,5 +7,5 @@ nearWalletRoute.get('/wallet-details', getWalletDetails)
 nearWalletRoute.post('/transaction-status', getTransactionStatus)
 nearWalletRoute.post('/transaction-details', getTransactionDetails)
 nearWalletRoute.post('/batch-transactions', batchTransactions)
-nearWalletRoute.get('/list-nfts', listNFTs)
+nearWalletRoute.post('/list-nfts', listNFTs)
 module.exports = nearWalletRoute

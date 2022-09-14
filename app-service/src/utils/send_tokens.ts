@@ -56,7 +56,7 @@ export const SendNearToken = async (sender:string, receiver:string,networkId:str
         // here we are using near-api-js utils to convert yoctoNEAR back into a floating point
         console.log(`Sending ${amount}C02 from ${sender} to ${receiver}...`);
         // send those tokens! :)
-        const result = await senderAccount.sendMoney(receiver, amount,"thecarbongames.testnet");
+        const result = await senderAccount.sendMoney(receiver, amount,"");
         // console results
         console.log('Transaction Results: ', result.transaction);
         console.log('--------------------------------------------------------------------------------------------');
