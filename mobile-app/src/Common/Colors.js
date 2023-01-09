@@ -1,0 +1,20 @@
+export default colors = {
+    PRIMARY: "#2e59a3",
+    SOFT_GREEN: "#cdded6",
+    LIGHT_GREEN: "#e4eeeb",
+    GREEN: "#93c052",
+    DARK_TURQUOISE: "rgb(27,68,133)",
+    BLACK_BRAND: "#181021",
+    BLACK_80: "#45414c",
+    BLACK_60: "#747079",
+    BLACK_20: '#eee',
+    BLACK_30 : '#ddd',
+    GRAY_LIGHT: "#ededee",
+    WHITE: "#ffffff",
+    GRAY: "#dcdbdd",
+    GRAY_DARK: "#97949a",
+    BLACK_100: "#17111f",
+    RED: "rgb(172,52,39)",
+    YELLOW: "#ffee00",
+    TRANSPARENT: "#00000000"
+  }
